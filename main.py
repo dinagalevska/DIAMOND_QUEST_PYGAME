@@ -16,11 +16,14 @@ FPS = 30
 bg1 = pygame.image.load('assets/BG1.png')
 bg2 = pygame.image.load('assets/BG2.png')
 bg4 = pygame.image.load('assets/BG4.png')
-bg5 = pygame.image.load('assets/BG5.png')
+# bg5 = pygame.image.load('assets/BG5.png')
+bg6 = pygame.image.load('assets/BG6.png')
+bg7 = pygame.image.load('assets/BG7.png')
+
 bg = bg4
 sun = pygame.image.load('assets/sun.png')
 jungle_dash = pygame.image.load('assets/jungle dash.png')
-you_won = pygame.image.load('assets/won.png')
+you_won = pygame.image.load('assets/win.png')
 level = 1
 max_level = len(os.listdir('levels/'))
 data = load_level(level)
@@ -119,7 +122,7 @@ while running:
 				score_2 += 1
 
 			draw_text(win, f"P1: {score_1} | Lives: {lives_1}", ((WIDTH // 4), tile_size // 2 + 10))
-			draw_text(win, f"P2: {score_2} | Lives: {lives_2}", ((WIDTH // 4) * 3, tile_size // 2 + 10))
+			draw_text(win, f"P2: {score_2} | Lives: {lives_2}", ((WIDTH // 4) * 2.5, tile_size // 2 + 10))
 			
 		game_over1, level_won_1 = player1.update(pressed_keys, game_over, level_won_1, game_won)
 		game_over2, level_won_2 = player2.update(pressed_keys, game_over, level_won_2, game_won)
@@ -162,6 +165,7 @@ while running:
 
 		if level_won_1 or level_won_2:
 			if level <= max_level:
+
 				level += 1
 				if level % 3 == 0:
 					lives_1 += 1
@@ -173,14 +177,14 @@ while running:
 					level_won_1 = False
 					level_won_2 = False
 
-				bg = random.choice([bg4, bg5, bg2, bg1])
+				bg = random.choice([bg6, bg7, bg4, bg2, bg1])
 			else:
 				game_won = True
 				bg = bg4
-				win.blit(you_won, (WIDTH//4, HEIGHT // 4))
+				win.blit(you_won, (WIDTH//4, HEIGHT // 10))
 
 				winner_text = "P1 Wins!" if score_1 > score_2 else "P2 Wins!" if score_2 > score_1 else "It's a Tie!"
-				draw_text(win, winner_text, (WIDTH // 2 - 100, HEIGHT // 2 - 50))
+				draw_text(win, winner_text, (WIDTH // 2 - 45, HEIGHT // 2 - 25))
 
 				home = home_btn.draw(win)
 
