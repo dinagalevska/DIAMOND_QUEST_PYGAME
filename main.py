@@ -21,7 +21,7 @@ bg6 = pygame.image.load('assets/BG6.png')
 bg7 = pygame.image.load('assets/BG7.png')
 
 bg = bg4
-sun = pygame.image.load('assets/sun.png')
+sun = pygame.image.load('assets/sun2.png')
 jungle_dash = pygame.image.load('assets/jungle dash.png')
 you_won = pygame.image.load('assets/win.png')
 level = 1
@@ -88,7 +88,7 @@ while running:
 	pressed_keys = pygame.key.get_pressed()
 
 	win.blit(bg, (0,0))
-	win.blit(sun, (40,40))
+	win.blit(sun, (50,10))
 	world.draw()
 	for group in groups:
 		group.draw(win)
