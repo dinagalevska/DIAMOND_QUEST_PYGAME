@@ -148,8 +148,8 @@ while running:
 		if lives_1 == 0 or lives_2 == 0:
 			game_over = True
 			winner = "Player 1" if lives_1 > lives_2 else "Player 2" if lives_2 > lives_1 else "Tie"
-			draw_text(win, f"Game Over! {game_over_player} lost!", (WIDTH // 2 - 80, HEIGHT // 2 - 35))
-			draw_text(win, f"Player 1: {score_1} Player 2: {score_2}", (440, 400))
+			draw_text(win, f"Game Over! {game_over_player} lost!", (WIDTH // 2 - 175, HEIGHT // 2 + 65))
+			draw_text(win, f"Player 1: {score_1} Player 2: {score_2}", (342, 420))
 
 			if replay_btn.draw(win):
 				level = 1

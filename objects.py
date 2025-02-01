@@ -29,7 +29,7 @@ dead_fx.set_volume(0.5)
 sounds = [diamond_fx, ]
 
 dead_img = pygame.image.load('assets/ghost.png')
-game_over_img = pygame.image.load('assets/gover.png')
+game_over_img = pygame.image.load('assets/gameover.png')
 game_over_img = pygame.transform.scale(game_over_img, (300,250))
 game_over_rect = game_over_img.get_rect(center=(WIDTH//2, HEIGHT//2 - HEIGHT//6))
 
