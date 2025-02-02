@@ -13,6 +13,7 @@ score_font = pygame.font.SysFont('Bauhaus 93', 30)
 
 WHITE = (255,255,255)
 BLUE = (30, 144, 255)
+BLACK = (255, 100, 100)
 
 mixer.init()
 
@@ -418,7 +419,7 @@ class Player2:
 		self.index = 0
 		self.counter = 0
 
-		for i in range(6):
+		for i in range(6, 12):
 			img = pygame.image.load(f'player/walk{i+1}.png')
 			img_right = pygame.transform.scale(img, (45,70))
 			img_left = pygame.transform.flip(img_right, True, False)
@@ -649,5 +650,5 @@ def load_level(level):
 	return data
 
 def draw_text(win, text, pos):
-	img = score_font.render(text, True, WHITE)
+	img = score_font.render(text, True, BLACK)
 	win.blit(img, pos)
