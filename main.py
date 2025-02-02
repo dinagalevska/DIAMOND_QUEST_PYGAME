@@ -22,7 +22,9 @@ bg7 = pygame.image.load('assets/BG7.png')
 
 bg = bg4
 sun = pygame.image.load('assets/sun2.png')
-jungle_dash = pygame.image.load('assets/jungle dash.png')
+jungle_dash = pygame.image.load('assets/logo.png')
+new_size = (200, 160)  # Adjust size as needed
+jungle_dash = pygame.transform.scale(jungle_dash, new_size)
 you_won = pygame.image.load('assets/win.png')
 level = 1
 max_level = len(os.listdir('levels/'))
@@ -94,7 +96,7 @@ while running:
 		group.draw(win)
 
 	if main_menu:
-		win.blit(jungle_dash, (WIDTH//2 - WIDTH//8, HEIGHT//4))
+		win.blit(jungle_dash, (WIDTH//2 - WIDTH//10.2, HEIGHT//3.8))
 
 		play_game = play_btn.draw(win)
 		if play_game:
