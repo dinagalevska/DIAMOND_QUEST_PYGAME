@@ -45,7 +45,7 @@ world = World(win, data, groups)
 player1 = Player(win, player_pos_1, world, groups)
 player2 = Player2(win, player_pos_2, world, groups)
 
-play= pygame.image.load('assets/play.png')
+play= pygame.image.load('assets\play_red_pink.png')
 replay = pygame.image.load('assets/replay.png')
 home = pygame.image.load('assets/home.png')
 exit = pygame.image.load('assets/exit.png')
